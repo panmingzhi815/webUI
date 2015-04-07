@@ -1,3 +1,6 @@
-/**
- * Created by Administrator on 2015/3/18 0018.
- */
+Ext.define('admin.controller.indexController', {
+    extend: 'Ext.app.Controller',
+    views: ['Viewport','indexMenuTree'],
+    model:['indexMenuTreeModel'],
+    stores:['indexMenuTreeStore']
+});

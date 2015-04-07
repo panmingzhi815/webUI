@@ -1,3 +1,11 @@
-/**
- * Created by Administrator on 2015/3/27 0027.
- */
+Ext.define("admin.view.indexMenuTree",{
+    extend:'Ext.tree.Panel',
+    border:false,
+    hrefTarget:'mainContent',
+    rootVisible:true,
+    alias:'widget.indexMenuTree',
+    store:'indexMenuTreeStore',
+    bodyStyle:{
+        padding:'10px'
+    }
+});
