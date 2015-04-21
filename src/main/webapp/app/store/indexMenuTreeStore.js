@@ -1,11 +1,13 @@
 Ext.define('admin.store.indexMenuTreeStore',{
     extend:'Ext.data.TreeStore',
-    defaultRootId:'root',
     model:'admin.model.indexMenuTreeModel',
-    proxy:{
-        type:'ajax',
-        autoLoad:true,
-        url:'./server/data.json',
-        reader:'json'
+    autoLoad : true,
+    proxy : {
+        type : 'ajax',
+        url : 'http://localhost:8080/server/data.json',
+        reader: {
+            type: 'json',
+            successProperty: 'success'
+        }
     }
 });
