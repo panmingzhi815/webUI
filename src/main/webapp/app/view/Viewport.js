@@ -5,9 +5,9 @@ Ext.define('admin.view.Viewport', {
     layout: 'border',
     items: [{
         region:'north',
-        height: 90,
+        height: 70,
         border:false,
-        html: '<br><center><font size=5>MVC模式实现的ExtJS案例</font><br><font size=2>源码来源:ITLee博客</font></center>'
+        html: '<br><center><font size=6>通用数据管理平台</font></center>'
     },{
         title: '功能菜单',
         region: 'west',
@@ -18,10 +18,20 @@ Ext.define('admin.view.Viewport', {
             xtype:'indexMenuTree'
         }]
     }, {
-        id: 'mainContent',
-        title: '主题内容显示',
-        layout: 'fit',
+        xtype: 'tabpanel',
         region: 'center',
-        contentEl: 'contentIframe'
+        id : 'mainView',
+        listeners: {
+            afterrender: function() {
+                var mainTab = Ext.getCmp('mainView');
+                mainTab.add({
+                    id: -1,
+                    title: "欢迎使用",
+                    closable: false,
+                    fit:true,
+                    html: "<iframe id='contentIframe' name='contentIframe' style='height: 100%; width: 100%' frameborder='no' src='images/main.jpg'></iframe>"
+                }).show();
+            }
+        }
     }]
 });

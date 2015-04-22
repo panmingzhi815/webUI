@@ -19,6 +19,6 @@
     <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
-<iframe id='contentIframe' name='contentIframe' style='height: 100%; width: 100%' frameborder="no"></iframe>
+
 </body>
 </html>
