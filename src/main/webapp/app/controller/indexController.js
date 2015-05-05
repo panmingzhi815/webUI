@@ -1,6 +1,6 @@
 Ext.define('admin.controller.indexController', {
     extend: 'Ext.app.Controller',
-    views: ['Viewport', 'indexMenuTree'],
+    views: ['Viewport', 'indexMenuTree','systemAccountManager'],
     model: [],
     stores: ['indexMenuTreeStore'],
     init: function () {
@@ -11,7 +11,7 @@ Ext.define('admin.controller.indexController', {
         });
     },
     addTab: function (view, rec, item, index, eventObj) {
-        var url = rec.get('url');
+        var xtype = rec.raw.xtype;
         var text = rec.get('text');
         var id = rec.get('id');
         var leaf = rec.get('leaf');
@@ -28,7 +28,8 @@ Ext.define('admin.controller.indexController', {
                     id: id,
                     title: text,
                     closable: true,
-                    html: "<iframe id='contentIframe' name='contentIframe' style='height: 100%; width: 100%' frameborder='no' src='" + url + "'></iframe>"
+                    border: false,
+                    xtype:xtype
                 }).show();
             }
             ;

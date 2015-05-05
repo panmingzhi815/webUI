@@ -7,7 +7,7 @@ Ext.define('admin.view.Viewport', {
         region:'north',
         height: 70,
         border:false,
-        html: '<br><center><font size=6>通用数据管理平台</font></center>'
+        html: '<img src="images/logo_48.png" style="margin-top: 11px;margin-left: 11px;float: left" vertical-align:middle;/><span style="line-height: 70px;height: 70px;font-size: 20px ">通用数据管理平台</span>'
     },{
         title: '功能菜单',
         region: 'west',
@@ -20,6 +20,7 @@ Ext.define('admin.view.Viewport', {
     }, {
         xtype: 'tabpanel',
         region: 'center',
+        fit:true,
         id : 'mainView',
         listeners: {
             afterrender: function() {
